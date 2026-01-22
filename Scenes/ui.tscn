@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2yq012yxwduy"]
+
+[ext_resource type="FontFile" uid="uid://b2aptj0erl4cw" path="res://Assets/PixelOperator8-Bold.ttf" id="1_jxero"]
+[ext_resource type="Texture2D" uid="uid://brvxvuyy1hcuh" path="res://Assets/Sprites/cash_background.png" id="1_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://bhxhelntpxawl" path="res://Assets/Sprites/menu_background.png" id="1_qdvrb"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FullWindowMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopVBoxContainer" type="VBoxContainer" parent="FullWindowMargin"]
+layout_mode = 2
+
+[node name="TopSpacer" type="MarginContainer" parent="FullWindowMargin/ShopVBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="ShopPageButtons" type="HBoxContainer" parent="FullWindowMargin/ShopVBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="Button" type="Button" parent="FullWindowMargin/ShopVBoxContainer/ShopPageButtons"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+icon = ExtResource("1_nf4gj")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="FullWindowMargin/ShopVBoxContainer/ShopPageButtons"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+texture = ExtResource("1_qdvrb")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="ShopContainer" type="HBoxContainer" parent="FullWindowMargin/ShopVBoxContainer"]
+custom_minimum_size = Vector2(248, 248)
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="ShopMarginContainer" type="MarginContainer" parent="FullWindowMargin/ShopVBoxContainer/ShopContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="ShopBackground" type="TextureRect" parent="FullWindowMargin/ShopVBoxContainer/ShopContainer/ShopMarginContainer"]
+custom_minimum_size = Vector2(265, 265)
+layout_mode = 2
+texture = ExtResource("1_qdvrb")
+expand_mode = 2
+
+[node name="ShopButtonContainer" type="HBoxContainer" parent="FullWindowMargin/ShopVBoxContainer"]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+
+[node name="ShopButton" type="Button" parent="FullWindowMargin/ShopVBoxContainer/ShopButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_jxero")
+text = "Shop"
+
+[node name="ShopButtonXSpacer" type="MarginContainer" parent="FullWindowMargin/ShopVBoxContainer/ShopButtonContainer"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+
+[node name="BottomSpacer" type="MarginContainer" parent="FullWindowMargin/ShopVBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2

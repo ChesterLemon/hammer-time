@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://62v6kvyne5d6"]
+
+[ext_resource type="Texture2D" uid="uid://cif6o48ff8r13" path="res://Assets/Sprites/base_nail01.png" id="1_cyer6"]
+[ext_resource type="Script" uid="uid://cdn3bwjlfva1p" path="res://Scenes/base_nail.gd" id="1_h8yd4"]
+[ext_resource type="Texture2D" uid="uid://brex0x0bj8vvd" path="res://Assets/Sprites/gold_nail.png" id="3_lthrn"]
+[ext_resource type="Texture2D" uid="uid://derej3b4bl83k" path="res://Assets/Sprites/lightning_nail.png" id="4_gnemg"]
+[ext_resource type="Texture2D" uid="uid://cw18bww2edbk1" path="res://Assets/Sprites/rainbow_nail.png" id="4_hyfek"]
+[ext_resource type="AudioStream" uid="uid://cx062rvp6pbbf" path="res://Assets/Sounds/gold_nail02.wav" id="5_hyfek"]
+[ext_resource type="AudioStream" uid="uid://bnsgj6ukuxj66" path="res://Assets/Sounds/lightning01.wav" id="7_hvtjl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnemg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cyer6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lthrn")
+}],
+"loop": true,
+"name": &"gold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gnemg")
+}],
+"loop": true,
+"name": &"lightning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hyfek")
+}],
+"loop": true,
+"name": &"rainbow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8yd4"]
+size = Vector2(4, 1.25)
+
+[node name="BaseNail" type="Area2D" groups=["nails"]]
+z_as_relative = false
+scale = Vector2(4, 4)
+script = ExtResource("1_h8yd4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gnemg")
+animation = &"lightning"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_h8yd4")
+
+[node name="GoldSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_hyfek")
+volume_db = -9.087
+panning_strength = 0.0
+bus = &"SFX"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-1, -24.75, 2, 49.5)
+
+[node name="LightningSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_hvtjl")
+volume_db = -8.959
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7fx6vl60q4ph"]
+
+[ext_resource type="Script" uid="uid://bblkuc0a34kgn" path="res://Scenes/plank.gd" id="1_cxi8c"]
+[ext_resource type="Texture2D" uid="uid://bjdt405ddx2v1" path="res://Assets/Sprites/plank01.png" id="1_t6gv0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxi8c"]
+size = Vector2(36.75, 68)
+
+[node name="Plank" type="Area2D" groups=["planks"]]
+scale = Vector2(8, 8)
+script = ExtResource("1_cxi8c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t6gv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12.375, 0)
+shape = SubResource("RectangleShape2D_cxi8c")

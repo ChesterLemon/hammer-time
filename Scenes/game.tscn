@@ -1,0 +1,1106 @@
+[gd_scene load_steps=79 format=3 uid="uid://di36efk833rjj"]
+
+[ext_resource type="Script" uid="uid://b7ojbdx71c4mc" path="res://Scenes/game_manager.gd" id="1_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://w3j30qek5esg" path="res://Scenes/hammer.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://62v6kvyne5d6" path="res://Scenes/base_nail.tscn" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://b7fx6vl60q4ph" path="res://Scenes/plank.tscn" id="3_3dryh"]
+[ext_resource type="Texture2D" uid="uid://brvxvuyy1hcuh" path="res://Assets/Sprites/cash_background.png" id="5_i6g32"]
+[ext_resource type="Script" uid="uid://berdb3h6rvuqn" path="res://Scenes/camera_2d.gd" id="5_v158k"]
+[ext_resource type="Script" uid="uid://bed3so2v8jfrm" path="res://Scenes/ui.gd" id="6_1phco"]
+[ext_resource type="FontFile" uid="uid://b2aptj0erl4cw" path="res://Assets/PixelOperator8-Bold.ttf" id="7_v158k"]
+[ext_resource type="Texture2D" uid="uid://cf6ikp1pah1xm" path="res://Assets/Sprites/shop_button_normal.png" id="9_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://bhxhelntpxawl" path="res://Assets/Sprites/menu_background.png" id="10_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://c04h8cus7tdyb" path="res://Assets/Sprites/shop_button_pressed.png" id="10_o5yvi"]
+[ext_resource type="Texture2D" uid="uid://cer4hcgymrssx" path="res://Assets/Sprites/upgrade_button_normal.png" id="11_rku1e"]
+[ext_resource type="Texture2D" uid="uid://bcrue4tdqg0pt" path="res://Assets/Sprites/upgrade_button_pressed.png" id="12_rfjv2"]
+[ext_resource type="FontFile" uid="uid://g4w01g2r5g72" path="res://Assets/PixelOperator8.ttf" id="13_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://1licouiqx3j1" path="res://Assets/Sprites/hammer_menu_background.png" id="15_85qyi"]
+[ext_resource type="AudioStream" uid="uid://c625n4opljt6i" path="res://Assets/Sounds/bad_select.wav" id="15_nb51f"]
+[ext_resource type="Texture2D" uid="uid://vqg5048crfps" path="res://Assets/Sprites/base_hammer_normal.png" id="16_iivbl"]
+[ext_resource type="Texture2D" uid="uid://bqgmtfm0dxbum" path="res://Assets/Sprites/base_hammer_clicked.png" id="17_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://caivykvl386hn" path="res://Assets/Sprites/dk_hammer_normal.png" id="18_exi56"]
+[ext_resource type="Texture2D" uid="uid://b1326m34b07bb" path="res://Assets/Sprites/mjolnir_normal.png" id="19_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://btmj6hofi443q" path="res://Assets/Sprites/dk_hammer_clicked.png" id="19_mg4q0"]
+[ext_resource type="Texture2D" uid="uid://qwuwpsnwfo46" path="res://Assets/Sprites/gold_hammer_normal.png" id="20_fkdbe"]
+[ext_resource type="Texture2D" uid="uid://duhdk8ec8k53m" path="res://Assets/Sprites/gold_hammer_clicked.png" id="21_81klo"]
+[ext_resource type="Texture2D" uid="uid://23ticxv68yls" path="res://Assets/Sprites/mjolnir_clicked.png" id="21_vm72l"]
+[ext_resource type="Texture2D" uid="uid://br6s677lmlw2g" path="res://Assets/Sprites/buy_button_normal.png" id="24_tgy6u"]
+[ext_resource type="Texture2D" uid="uid://7kirvi1emu8i" path="res://Assets/Sprites/buy_button_clicked.png" id="25_cwurv"]
+[ext_resource type="Texture2D" uid="uid://dtexamtmi5wrj" path="res://Assets/Sprites/use_button_normal.png" id="26_tgy6u"]
+[ext_resource type="Texture2D" uid="uid://bwe4yourjxhhr" path="res://Assets/Sprites/use_button_clicked.png" id="27_cwurv"]
+[ext_resource type="AudioStream" uid="uid://dv7pa2xihcpsy" path="res://Assets/Sounds/hammer_buy.mp3" id="29_cwurv"]
+[ext_resource type="Texture2D" uid="uid://bmo3458av3adv" path="res://Assets/Sprites/effects/default.png" id="30_lmoi6"]
+[ext_resource type="Texture2D" uid="uid://dli4rii6iqbfe" path="res://Assets/Sprites/effects/rainbow_effect1.png" id="31_lmoi6"]
+[ext_resource type="Texture2D" uid="uid://cw5mhpryrqym" path="res://Assets/Sprites/effects/rainbow_effect2.png" id="32_6uxt2"]
+[ext_resource type="Texture2D" uid="uid://cqyfb7rqtbshh" path="res://Assets/Sprites/effects/rainbow_effect3.png" id="33_ym3tv"]
+[ext_resource type="Texture2D" uid="uid://cvglvhp4akbrw" path="res://Assets/Sprites/effects/rainbow_effect4.png" id="34_bwj6o"]
+[ext_resource type="Texture2D" uid="uid://cllrvyw0lxq1e" path="res://Assets/Sprites/effects/rainbow_effect5.png" id="35_f3c8l"]
+[ext_resource type="Texture2D" uid="uid://pxpciwkawroo" path="res://Assets/Sprites/effects/rainbow_effect6.png" id="36_bu0y5"]
+[ext_resource type="AudioStream" uid="uid://cstl1tciy2qmc" path="res://Assets/Sounds/dk_ability_music.mp3" id="36_i26dy"]
+[ext_resource type="Texture2D" uid="uid://bqm65w21xypqg" path="res://Assets/Sprites/effects/lightning_effect1.png" id="37_6xvgv"]
+[ext_resource type="Texture2D" uid="uid://bp27ixmcr311s" path="res://Assets/Sprites/effects/lightning_effect2.png" id="38_8lpvs"]
+[ext_resource type="Texture2D" uid="uid://bk0gebplpx7rm" path="res://Assets/Sprites/effects/lightning_effect3.png" id="39_x6jpx"]
+[ext_resource type="Texture2D" uid="uid://bddhj6c8kd0aa" path="res://Assets/Sprites/effects/lightning_effect4.png" id="40_sjh24"]
+[ext_resource type="Texture2D" uid="uid://fwfqmqnd8f2j" path="res://Assets/Sprites/effects/lightning_effect5.png" id="41_k5jl5"]
+[ext_resource type="Texture2D" uid="uid://pvt05kay0sbu" path="res://Assets/Sprites/effects/lightning_effect6.png" id="42_nqk4g"]
+[ext_resource type="Texture2D" uid="uid://c7uf6jfsbywvq" path="res://Assets/Sprites/effects/lightning_effect7.png" id="43_fh6x0"]
+[ext_resource type="Texture2D" uid="uid://d2nbau7v46uhy" path="res://Assets/Sprites/effects/lightning_effect8.png" id="44_j0obb"]
+[ext_resource type="Texture2D" uid="uid://cli1jk2ki8m2b" path="res://Assets/Sprites/effects/lightning_effect9.png" id="45_nfavm"]
+[ext_resource type="Texture2D" uid="uid://gqt20sqej87h" path="res://Assets/Sprites/effects/lightning_effect10.png" id="46_jcn4n"]
+[ext_resource type="Texture2D" uid="uid://7aufnpqird0a" path="res://Assets/Sprites/effects/lightning_effect11.png" id="47_l4kai"]
+[ext_resource type="Texture2D" uid="uid://bg7oktc3a0ke7" path="res://Assets/Sprites/effects/lightning_effect12.png" id="48_kcoun"]
+[ext_resource type="Texture2D" uid="uid://bfc2amppu26cf" path="res://Assets/Sprites/effects/lightning_effect13.png" id="49_jegl3"]
+[ext_resource type="Texture2D" uid="uid://0ax24u3cvml6" path="res://Assets/Sprites/effects/lightning_effect14.png" id="50_csv17"]
+[ext_resource type="Texture2D" uid="uid://dlndnskf22sk0" path="res://Assets/Sprites/effects/lightning_effect15.png" id="51_6i05k"]
+[ext_resource type="Texture2D" uid="uid://bvd8iya0a52kh" path="res://Assets/Sprites/effects/lightning_effect16.png" id="52_1kfie"]
+[ext_resource type="Texture2D" uid="uid://1uq88tcmqijw" path="res://Assets/Sprites/effects/lightning_effect17.png" id="53_sfx3s"]
+
+[sub_resource type="Animation" id="Animation_nb51f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1phco"]
+resource_name = "cant_afford"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_colors/font_color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03333334, 0.46666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [null, Color(0.7037939, 0.05182693, 0.053039514, 1), Color(0.9098039, 0.09411765, 0.09019608, 1), null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnt18"]
+_data = {
+&"RESET": SubResource("Animation_nb51f"),
+&"cant_afford": SubResource("Animation_1phco")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rku1e"]
+texture = ExtResource("9_ldgsr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfjv2"]
+texture = ExtResource("10_o5yvi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1phco"]
+texture = ExtResource("9_ldgsr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nb51f"]
+texture = ExtResource("11_rku1e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnt18"]
+texture = ExtResource("12_rfjv2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ewbju"]
+texture = ExtResource("11_rku1e")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mucmn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_7nbq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_iivbl")
+}],
+"loop": false,
+"name": &"base",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_exi56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mg4q0")
+}],
+"loop": false,
+"name": &"dk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_fkdbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_81klo")
+}],
+"loop": true,
+"name": &"gold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_7t8sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vm72l")
+}],
+"loop": true,
+"name": &"mjolnir",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8m3t6"]
+texture = ExtResource("24_tgy6u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ese38"]
+texture = ExtResource("25_cwurv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mucmn"]
+texture = ExtResource("26_tgy6u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oeip8"]
+texture = ExtResource("27_cwurv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwurv"]
+texture = ExtResource("16_iivbl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xe308"]
+texture = ExtResource("17_7nbq1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3cha"]
+texture = ExtResource("18_exi56")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i26dy"]
+texture = ExtResource("19_mg4q0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lmoi6"]
+texture = ExtResource("20_fkdbe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6uxt2"]
+texture = ExtResource("21_81klo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ym3tv"]
+texture = ExtResource("19_7t8sx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwj6o"]
+texture = ExtResource("21_vm72l")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwurv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_lmoi6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_lmoi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_6uxt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ym3tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_bwj6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_f3c8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_bu0y5")
+}],
+"loop": true,
+"name": &"dk",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_6xvgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_8lpvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_x6jpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_sjh24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_k5jl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_nqk4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_fh6x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_j0obb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_nfavm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_jcn4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_l4kai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_kcoun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_jegl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_csv17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_6i05k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_1kfie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_sfx3s")
+}],
+"loop": false,
+"name": &"mjolnir",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xvgv"]
+size = Vector2(373, 15)
+
+[node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("1_1l0tm")
+
+[node name="BackgroundPlates" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Background" type="ColorRect" parent="BackgroundPlates"]
+offset_left = -223.0
+offset_top = -233.0
+offset_right = 148.0
+offset_bottom = 260.0
+color = Color(0.42329448, 0.7309138, 0.44467163, 1)
+
+[node name="WoodBackground" type="ColorRect" parent="BackgroundPlates"]
+offset_left = -293.0
+offset_top = -238.0
+offset_right = -128.0
+offset_bottom = 271.0
+color = Color(0.72156864, 0.5058824, 0.30980393, 1)
+
+[node name="WoodEdgeBackground" type="ColorRect" parent="BackgroundPlates"]
+offset_left = -128.0
+offset_top = -238.0
+offset_right = -120.0
+offset_bottom = 271.0
+color = Color(0.07058824, 0.05490196, 0.18431373, 1)
+
+[node name="Hammer" parent="." instance=ExtResource("1_ebmjs")]
+unique_name_in_owner = true
+process_mode = 1
+z_index = 1
+position = Vector2(32, 0)
+
+[node name="Plank" parent="." instance=ExtResource("3_3dryh")]
+process_mode = 3
+z_index = 2
+position = Vector2(-168, 10)
+
+[node name="BaseNail" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -16.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail2" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(-6, -20.5)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail3" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(-6, -24.25)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail4" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(-6, -28)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail5" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -13)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail6" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -9.25)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail7" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -5.5)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail8" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -1.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail9" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 2)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail10" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 5.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail11" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 9.5)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail12" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 13.25)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail13" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 17)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail14" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 20.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail15" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 24.5)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail16" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 28.25)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail17" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 32)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail19" parent="Plank" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -31.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="Plank2" parent="." instance=ExtResource("3_3dryh")]
+process_mode = 3
+z_index = 2
+position = Vector2(-168, 552)
+
+[node name="BaseNail" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -16.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail2" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -20.5)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail3" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -24.25)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail4" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -28)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail5" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -13)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail6" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -9.25)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail7" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -5.5)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail8" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -1.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail9" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 2)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail10" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 5.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail11" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 9.5)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail12" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 13.25)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail13" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 17)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail14" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 20.75)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail15" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 24.5)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail16" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 28.25)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail17" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, 32)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="BaseNail19" parent="Plank2" instance=ExtResource("2_wrm1d")]
+position = Vector2(6.75, -32)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+z_index = 9
+position = Vector2(-43, 8)
+script = ExtResource("5_v158k")
+
+[node name="UI" type="Node2D" parent="."]
+process_mode = 3
+script = ExtResource("6_1phco")
+
+[node name="MoneyBG" type="TextureRect" parent="UI"]
+offset_left = 6.0
+offset_top = -229.0
+offset_right = 70.0
+offset_bottom = -205.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_i6g32")
+
+[node name="MoneyLabel" type="Label" parent="UI"]
+unique_name_in_owner = true
+offset_left = 12.0
+offset_top = -216.0
+offset_right = 46.0
+offset_bottom = -193.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("7_v158k")
+text = "$0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyLabelAnim" type="AnimationPlayer" parent="UI/MoneyLabel"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_nnt18")
+}
+
+[node name="ShopButton" type="Button" parent="UI"]
+unique_name_in_owner = true
+offset_left = 52.057693
+offset_top = 183.0
+offset_right = 133.0
+offset_bottom = 244.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_rku1e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rfjv2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1phco")
+
+[node name="ShopButtonText" type="Label" parent="UI/ShopButton"]
+layout_mode = 0
+offset_left = 7.9423103
+offset_top = 23.0
+offset_right = 71.94231
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("7_v158k")
+text = "SHOP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopMenu" type="TextureRect" parent="UI"]
+unique_name_in_owner = true
+visible = false
+z_index = 6
+offset_left = -190.0
+offset_top = -169.0
+offset_right = 113.0
+offset_bottom = 169.20776
+texture = ExtResource("10_ldgsr")
+
+[node name="SwingSpeedButton" type="Button" parent="UI/ShopMenu"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 19.0
+offset_top = 65.0
+offset_right = 284.0
+offset_bottom = 117.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nb51f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nnt18")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ewbju")
+
+[node name="SwingSpeedButtonText" type="Label" parent="UI/ShopMenu/SwingSpeedButton"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 16.0
+offset_right = 171.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "Speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedPrice" type="Label" parent="UI/ShopMenu/SwingSpeedButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 102.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "$1"
+vertical_alignment = 1
+
+[node name="SpeedCount" type="Label" parent="UI/ShopMenu/SwingSpeedButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 171.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "0/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CritChanceButton" type="Button" parent="UI/ShopMenu"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 19.0
+offset_top = 221.0
+offset_right = 284.0
+offset_bottom = 273.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nb51f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nnt18")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ewbju")
+
+[node name="CritChanceButtonText" type="Label" parent="UI/ShopMenu/CritChanceButton"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 16.0
+offset_right = 161.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "Crit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CritPrice" type="Label" parent="UI/ShopMenu/CritChanceButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 94.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "$1"
+vertical_alignment = 1
+
+[node name="CritChanceCount" type="Label" parent="UI/ShopMenu/CritChanceButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 171.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "0/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SwingPowerButton" type="Button" parent="UI/ShopMenu"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 19.0
+offset_top = 145.0
+offset_right = 284.0
+offset_bottom = 197.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nb51f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nnt18")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ewbju")
+
+[node name="SwingPowerButtonText" type="Label" parent="UI/ShopMenu/SwingPowerButton"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 16.0
+offset_right = 190.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "Power"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PowerPrice" type="Label" parent="UI/ShopMenu/SwingPowerButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 102.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "$1"
+vertical_alignment = 1
+
+[node name="StrengthCount" type="Label" parent="UI/ShopMenu/SwingPowerButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 171.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "0/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HammersButton" type="Button" parent="UI/ShopMenu"]
+layout_mode = 0
+offset_left = 113.730774
+offset_top = 288.0
+offset_right = 287.0
+offset_bottom = 322.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nb51f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nnt18")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ewbju")
+
+[node name="HammersButtonLabel" type="Label" parent="UI/ShopMenu/HammersButton"]
+layout_mode = 0
+offset_left = 18.269226
+offset_top = 6.0
+offset_right = 154.26923
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "Hammers ->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradesLabel" type="Label" parent="UI/ShopMenu"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 285.73077
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("7_v158k")
+theme_override_font_sizes/font_size = 24
+text = "UPGRADES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HammerMenu" type="TextureRect" parent="UI"]
+unique_name_in_owner = true
+visible = false
+z_index = 6
+offset_left = -190.0
+offset_top = -169.0
+offset_right = 113.0
+offset_bottom = 169.20776
+texture = ExtResource("10_ldgsr")
+
+[node name="UpgradesButton" type="Button" parent="UI/HammerMenu"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 288.0
+offset_right = 189.26923
+offset_bottom = 322.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_nb51f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nnt18")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ewbju")
+
+[node name="UpgradesButtonText" type="Label" parent="UI/HammerMenu/UpgradesButton"]
+layout_mode = 0
+offset_left = 18.269226
+offset_top = 6.0
+offset_right = 154.26923
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "<- Upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HammerBG" type="TextureRect" parent="UI/HammerMenu"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 285.6667
+offset_bottom = 199.0
+texture = ExtResource("15_85qyi")
+
+[node name="StatsLabel" type="Label" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 205.0
+offset_right = 276.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+text = "Increased money per nail"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BaseHammerIcon" type="AnimatedSprite2D" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+position = Vector2(63, 71)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mucmn")
+animation = &"base"
+
+[node name="BaseBuyButton" type="Button" parent="UI/HammerMenu/BaseHammerIcon"]
+custom_minimum_size = Vector2(24, 16)
+offset_left = -12.0
+offset_top = 23.0
+offset_right = 12.0
+offset_bottom = 39.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8m3t6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ese38")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8m3t6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ese38")
+disabled = true
+
+[node name="BaseBuyButtonPrice" type="Label" parent="UI/HammerMenu/BaseHammerIcon/BaseBuyButton"]
+visible = false
+layout_mode = 0
+offset_left = 4.5
+offset_top = 3.5
+offset_right = 18.5
+offset_bottom = 11.5
+theme_override_colors/font_color = Color(0.31764707, 0.6039216, 0.34117648, 1)
+theme_override_fonts/font = ExtResource("13_rfjv2")
+theme_override_font_sizes/font_size = 8
+text = "--"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BaseUseButton" type="Button" parent="UI/HammerMenu/BaseHammerIcon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 16)
+offset_left = -12.0
+offset_top = 41.0
+offset_right = 12.0
+offset_bottom = 57.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mucmn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oeip8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mucmn")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oeip8")
+disabled = true
+
+[node name="BaseHammerButton" type="Button" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 82)
+layout_mode = 0
+offset_left = 39.0
+offset_top = 30.0
+offset_right = 87.0
+offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_cwurv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xe308")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xe308")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_xe308")
+disabled = true
+
+[node name="DkHammerIcon" type="AnimatedSprite2D" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+position = Vector2(122, 71)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mucmn")
+animation = &"dk"
+
+[node name="DkBuyButton" type="Button" parent="UI/HammerMenu/DkHammerIcon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 16)
+offset_left = -12.0
+offset_top = 23.0
+offset_right = 12.0
+offset_bottom = 39.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8m3t6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ese38")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8m3t6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ese38")
+
+[node name="DkBuyText" type="Label" parent="UI/HammerMenu/DkHammerIcon/DkBuyButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.5
+offset_right = 22.0
+offset_bottom = 12.5
+theme_override_fonts/font = ExtResource("13_rfjv2")
+theme_override_font_sizes/font_size = 8
+text = "$25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DkUseButton" type="Button" parent="UI/HammerMenu/DkHammerIcon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 16)
+offset_left = -12.0
+offset_top = 41.0
+offset_right = 12.0
+offset_bottom = 57.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mucmn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oeip8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mucmn")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oeip8")
+
+[node name="DkHammerButton" type="Button" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 82)
+layout_mode = 0
+offset_left = 98.0
+offset_top = 30.0
+offset_right = 146.0
+offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_d3cha")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i26dy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i26dy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i26dy")
+
+[node name="GoldHammerIcon" type="AnimatedSprite2D" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+position = Vector2(181, 71)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mucmn")
+animation = &"gold"
+
+[node name="GoldBuyButton" type="Button" parent="UI/HammerMenu/GoldHammerIcon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 16)
+offset_left = -12.0
+offset_top = 23.0
+offset_right = 12.0
+offset_bottom = 39.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8m3t6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ese38")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8m3t6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ese38")
+
+[node name="GoldBuyText" type="Label" parent="UI/HammerMenu/GoldHammerIcon/GoldBuyButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 0.5
+offset_top = 4.0
+offset_right = 21.5
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+theme_override_font_sizes/font_size = 8
+text = "$50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldUseButton" type="Button" parent="UI/HammerMenu/GoldHammerIcon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 16)
+offset_left = -12.0
+offset_top = 41.0
+offset_right = 12.0
+offset_bottom = 57.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mucmn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oeip8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mucmn")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oeip8")
+
+[node name="GoldHammerButton" type="Button" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 82)
+layout_mode = 0
+offset_left = 157.0
+offset_top = 30.0
+offset_right = 205.0
+offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_lmoi6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6uxt2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6uxt2")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_6uxt2")
+
+[node name="MjolnirHammerIcon" type="AnimatedSprite2D" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+position = Vector2(240, 71)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mucmn")
+animation = &"mjolnir"
+
+[node name="MjolnirBuyButton" type="Button" parent="UI/HammerMenu/MjolnirHammerIcon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 16)
+offset_left = -12.0
+offset_top = 23.0
+offset_right = 12.0
+offset_bottom = 39.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8m3t6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ese38")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8m3t6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ese38")
+
+[node name="MjolnirBuyText" type="Label" parent="UI/HammerMenu/MjolnirHammerIcon/MjolnirBuyButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 22.0
+offset_bottom = 12.0
+theme_override_fonts/font = ExtResource("13_rfjv2")
+theme_override_font_sizes/font_size = 8
+text = "$99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MjolnirUseButton" type="Button" parent="UI/HammerMenu/MjolnirHammerIcon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 16)
+offset_left = -12.0
+offset_top = 41.0
+offset_right = 12.0
+offset_bottom = 57.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mucmn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oeip8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mucmn")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oeip8")
+
+[node name="MjolnirHammerButton" type="Button" parent="UI/HammerMenu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 82)
+layout_mode = 0
+offset_left = 216.0
+offset_top = 30.0
+offset_right = 264.0
+offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ym3tv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bwj6o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bwj6o")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_bwj6o")
+
+[node name="BadSelect" type="AudioStreamPlayer" parent="UI"]
+unique_name_in_owner = true
+stream = ExtResource("15_nb51f")
+volume_db = -9.76
+bus = &"SFX"
+
+[node name="HammerBuy" type="AudioStreamPlayer" parent="UI"]
+unique_name_in_owner = true
+stream = ExtResource("29_cwurv")
+volume_db = -4.23
+
+[node name="EffectAnimation" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(-43, 8)
+sprite_frames = SubResource("SpriteFrames_cwurv")
+autoplay = "default"
+
+[node name="DkMusic" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("36_i26dy")
+
+[node name="NailStop" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NailStop"]
+position = Vector2(-191.5, -137.5)
+shape = SubResource("RectangleShape2D_6xvgv")
+debug_color = Color(0.914975, 8.220732e-05, 0.7162066, 0.41960785)
+
+[connection signal="pressed" from="UI/ShopButton" to="GameManager" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="UI/ShopMenu/SwingSpeedButton" to="GameManager" method="_on_swing_speed_button_pressed"]
+[connection signal="pressed" from="UI/ShopMenu/CritChanceButton" to="GameManager" method="_on_crit_chance_button_pressed"]
+[connection signal="pressed" from="UI/ShopMenu/SwingPowerButton" to="GameManager" method="_on_swing_power_button_pressed"]
+[connection signal="pressed" from="UI/ShopMenu/HammersButton" to="GameManager" method="_on_hammers_button_pressed"]
+[connection signal="pressed" from="UI/HammerMenu/UpgradesButton" to="GameManager" method="_on_upgrades_button_pressed"]
+[connection signal="pressed" from="UI/HammerMenu/BaseHammerIcon/BaseUseButton" to="GameManager" method="_on_base_use_button_pressed"]
+[connection signal="mouse_entered" from="UI/HammerMenu/BaseHammerButton" to="GameManager" method="_on_base_hammer_button_mouse_entered"]
+[connection signal="pressed" from="UI/HammerMenu/DkHammerIcon/DkBuyButton" to="GameManager" method="_on_dk_buy_button_pressed"]
+[connection signal="pressed" from="UI/HammerMenu/DkHammerIcon/DkUseButton" to="GameManager" method="_on_dk_use_button_pressed"]
+[connection signal="mouse_entered" from="UI/HammerMenu/DkHammerButton" to="GameManager" method="_on_dk_hammer_button_mouse_entered"]
+[connection signal="pressed" from="UI/HammerMenu/GoldHammerIcon/GoldBuyButton" to="GameManager" method="_on_gold_buy_button_pressed"]
+[connection signal="pressed" from="UI/HammerMenu/GoldHammerIcon/GoldUseButton" to="GameManager" method="_on_gold_use_button_pressed"]
+[connection signal="mouse_entered" from="UI/HammerMenu/GoldHammerButton" to="GameManager" method="_on_gold_hammer_button_mouse_entered"]
+[connection signal="pressed" from="UI/HammerMenu/MjolnirHammerIcon/MjolnirBuyButton" to="GameManager" method="_on_mjolnir_buy_button_pressed"]
+[connection signal="pressed" from="UI/HammerMenu/MjolnirHammerIcon/MjolnirUseButton" to="GameManager" method="_on_mjolnir_use_button_pressed"]
+[connection signal="mouse_entered" from="UI/HammerMenu/MjolnirHammerButton" to="GameManager" method="_on_mjolnir_hammer_button_mouse_entered"]
+[connection signal="area_entered" from="NailStop" to="GameManager" method="_on_nail_stop_area_entered"]
